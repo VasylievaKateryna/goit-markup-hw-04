@@ -92,7 +92,7 @@ img {
   position: relative;
 }
 
-.nav-link.current::before {
+.nav-link.current::after {
   content: "";
   position: absolute;
   left: 0;
@@ -148,7 +148,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 .main-hero-tytle {
@@ -177,6 +177,7 @@ img {
   min-width: 169px;
   display: block;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-hero-button:hover,
