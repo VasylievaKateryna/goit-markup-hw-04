@@ -421,6 +421,7 @@ justify-content: center;
 .footer-container {
   display: flex;
   align-items: baseline;
+  margin-right: 120px;
 }
 
 .footer-logo .logo-part {
@@ -445,7 +446,7 @@ justify-content: center;
 }
 
 .footer-icon {
-  margin-left: 120px;
+ 
   width: 208px;
 }
 .footer-icon-link {
