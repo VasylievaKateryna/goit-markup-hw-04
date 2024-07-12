@@ -365,6 +365,7 @@ justify-content: center;
   flex-wrap: wrap;
   row-gap: 48px;
   column-gap: 24px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .portfolio-list-tytle {
@@ -380,6 +381,7 @@ justify-content: center;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .portfolio-subtytle {
   text-align: left;
@@ -439,6 +441,7 @@ justify-content: center;
 .footer-icon-item {
   width: 40px;
   height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon {
@@ -462,7 +465,7 @@ justify-content: center;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
-  margin: 16px;
+  margin-bottom: 16px;
   margin-left: 0;
 }
 
