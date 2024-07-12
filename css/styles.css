@@ -40,6 +40,8 @@ img {
 /* header*/
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -75,6 +77,7 @@ img {
 .header-logo .logo-part {
   color: #2e2f42;
 }
+
 .nav-link {
   display: block;
   padding: 24px 0;
@@ -83,7 +86,23 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.nav-link.current {
+  position: relative;
+}
+
+.nav-link.current::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+}
+
 .nav-link:hover,
 .nav-link:focus {
   color: #404bbf;
@@ -106,11 +125,13 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-link:hover,
 .nav-link:focus,
 .contacts-link:hover,
-.contacts-link:focus {
+.contacts-link:focus,
+.nav-link.current {
   color: #404bbf;
 }
 /*----*/
@@ -127,6 +148,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 1440px;
 }
 
 .main-hero-tytle {
@@ -228,6 +250,8 @@ img {
   background-color: #fff;
   border-radius: 0 0 4px 4px;
   width: calc((100% - 24px * 3) / 4);
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .team-list {
@@ -253,8 +277,37 @@ img {
 }
 .content-foto {
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 8px;
 }
+
+.icon-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.icon-item {
+  width: 40px;
+  height: 40px;
+}
+.icon-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-link:hover,
+.icon-link:focus {
+  background-color: #404bbf;
+}
+.icon-icon {
+  fill: #f4f4fd;
+}
+
 /*------------*/
 
 /*   portfolio   */
@@ -278,7 +331,16 @@ img {
   background: #fff;
   width: calc((100% - 24px * 2) / 3);
 }
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.portfolio-item:hover .portfolio-item-text {
+  transform: translateY(0);
+}
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -307,6 +369,24 @@ img {
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
 }
+.portfolio-item-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-item-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 32px;
+  height: 100%;
+  background-color: #4d5ae5;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  transform: translateY(100%);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /*-------------*/
 
@@ -316,6 +396,12 @@ img {
   background-color: #2e2f42;
   padding: 100px 0;
 }
+
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+
 .footer-logo .logo-part {
   color: #f4f4fd;
 }
@@ -330,5 +416,47 @@ img {
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
+}
+.footer-icon-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-icon {
+  margin-left: 120px;
+  width: 208px;
+}
+.footer-icon-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-media {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 16px;
+  margin-left: 0;
+}
+
+.footer-social-icon {
+  display: flex;
+  gap: 16px;
+}
+.footer-icon-icon {
+  fill: #f4f4fd;
+}
+
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+  background-color: #31d0aa;
 }
 /*------------*/
